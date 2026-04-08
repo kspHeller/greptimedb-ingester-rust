@@ -1,9 +1,24 @@
 [package]
 name = "greptimedb-ingester"
-version = "0.15.0"
+version = "0.16.0"
 edition = "2021"
+rust-version = "1.85"
 license = "Apache-2.0"
 description = "A rust client for GreptimeDB gRPC protocol"
+homepage = "https://github.com/GreptimeTeam/greptimedb-ingester-rust"
+repository = "https://github.com/GreptimeTeam/greptimedb-ingester-rust"
+documentation = "https://docs.rs/greptimedb-ingester"
+keywords = ["greptimedb", "database", "grpc", "arrow", "ingest"]
+categories = ["database", "api-bindings"]
+exclude = [
+    ".github/**",
+    ".gitignore",
+    "docker-compose.test.yml",
+    "examples/db-connection.toml",
+    "licenserc.toml",
+    "rust-toolchain.toml",
+    "scripts/**",
+]
 
 [dependencies]
 arrow = { version = "58.1", features = ["prettyprint"] }
