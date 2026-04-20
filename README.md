@@ -425,6 +425,18 @@ fn setup_client() -> Client {
 }
 ```
 
+Leave transport compression unset unless you need it explicitly. If the server expects compressed gRPC traffic, configure it like this:
+
+```rust,no_run
+use greptimedb_ingester::{ChannelConfig, GrpcCompression};
+
+let channel_config = ChannelConfig::default()
+    .with_send_compression(GrpcCompression::Zstd)
+    .with_accept_compression(GrpcCompression::Zstd);
+```
+
+Use `GrpcCompression::Gzip` or `GrpcCompression::Zstd` based on the server configuration.
+
 ## Error Handling
 
 The library provides comprehensive error types:
